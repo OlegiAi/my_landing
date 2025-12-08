@@ -59,14 +59,14 @@ export function ContentFactorySection() {
             {/* Контейнер с рамкой */}
             <motion.div
               whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-              className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 hover:border-white/20 transition-all"
+              className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-[32px] p-6 hover:border-white/20 transition-all overflow-hidden"
             >
               <Image
                 src="/проекты.png"
                 alt="Проекты"
                 width={500}
                 height={500}
-                className="w-full max-w-md lg:max-w-lg object-contain rounded-2xl"
+                className="w-full max-w-md lg:max-w-lg object-contain rounded-[24px]"
                 priority
               />
 
