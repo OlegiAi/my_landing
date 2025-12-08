@@ -88,9 +88,9 @@ export function WorkRealitySection() {
             <Image
               src="/злой.jpg"
               alt="Злой персонаж"
-              width={400}
-              height={400}
-              className="w-full max-w-xs lg:max-w-sm object-contain"
+              width={450}
+              height={450}
+              className="w-full max-w-sm lg:max-w-md object-contain"
               priority
             />
           </motion.div>
