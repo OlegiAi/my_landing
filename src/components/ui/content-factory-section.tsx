@@ -2,13 +2,16 @@
 
 import { motion } from 'framer-motion';
 
-const floatingItems = [
-  { text: 'Посты', delay: 0, duration: 20, x: '-20%', y: '10%' },
-  { text: 'Рилсы', delay: 2, duration: 25, x: '80%', y: '20%' },
-  { text: 'Сторис', delay: 4, duration: 22, x: '-10%', y: '70%' },
-  { text: 'Сценарии', delay: 1, duration: 24, x: '85%', y: '75%' },
-  { text: 'Лендинги', delay: 3, duration: 23, x: '10%', y: '85%' },
-  { text: 'Статьи', delay: 5, duration: 21, x: '90%', y: '40%' },
+const floatingItemsData = [
+  // Left side items
+  { text: 'Посты', side: 'left', startY: 100, endY: 300, duration: 15, delay: 0 },
+  { text: 'Рилсы', side: 'left', startY: 400, endY: 200, duration: 18, delay: 2 },
+  { text: 'Сторис', side: 'left', startY: 600, endY: 450, duration: 16, delay: 4 },
+
+  // Right side items
+  { text: 'Сценарии', side: 'right', startY: 150, endY: 350, duration: 17, delay: 1 },
+  { text: 'Лендинги', side: 'right', startY: 450, endY: 250, duration: 19, delay: 3 },
+  { text: 'Статьи', side: 'right', startY: 550, endY: 400, duration: 16, delay: 5 },
 ];
 
 export function ContentFactorySection() {
@@ -18,15 +21,23 @@ export function ContentFactorySection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black" />
 
       {/* Floating content pills */}
-      {floatingItems.map((item, index) => (
+      {floatingItemsData.map((item, index) => (
         <motion.div
           key={index}
-          className="absolute bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3 text-gray-400 text-sm font-medium pointer-events-none"
-          initial={{ x: item.x, y: item.y, opacity: 0 }}
+          className="absolute bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-full px-8 py-4 text-gray-500 text-base font-medium pointer-events-none whitespace-nowrap"
+          style={{
+            [item.side]: '-200px',
+          }}
+          initial={{
+            y: item.startY,
+            opacity: 0,
+            x: 0
+          }}
           animate={{
-            x: [item.x, `calc(${item.x} + 30px)`, item.x],
-            y: [item.y, `calc(${item.y} - 40px)`, item.y],
-            opacity: [0, 0.3, 0],
+            x: item.side === 'left' ? [-50, 50, -50] : [50, -50, 50],
+            y: [item.startY, item.endY, item.startY],
+            opacity: [0, 0.6, 0],
+            rotate: [0, 5, -5, 0],
           }}
           transition={{
             duration: item.duration,
