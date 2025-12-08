@@ -25,7 +25,7 @@ export function WorkRealitySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl md:text-6xl font-bold mb-8 max-w-3xl"
+              className="text-4xl md:text-6xl font-bold mb-8"
             >
               <span className="text-white">Как выглядит работа </span>
               <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
