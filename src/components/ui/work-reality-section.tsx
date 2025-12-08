@@ -86,7 +86,7 @@ export function WorkRealitySection() {
             className="relative flex justify-center lg:justify-end"
           >
             <Image
-              src="/злой.png"
+              src="/злой.jpg"
               alt="Злой персонаж"
               width={500}
               height={500}
