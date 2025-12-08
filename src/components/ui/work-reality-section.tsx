@@ -25,7 +25,7 @@ export function WorkRealitySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl md:text-6xl font-bold mb-8"
+              className="text-4xl md:text-6xl font-bold mb-8 max-w-xl"
             >
               <span className="text-white">Как выглядит работа </span>
               <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
@@ -88,9 +88,9 @@ export function WorkRealitySection() {
             <Image
               src="/злой.jpg"
               alt="Злой персонаж"
-              width={450}
-              height={450}
-              className="w-full max-w-sm lg:max-w-md object-contain"
+              width={400}
+              height={400}
+              className="w-full max-w-xs lg:max-w-sm object-contain"
               priority
             />
           </motion.div>
