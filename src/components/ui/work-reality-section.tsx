@@ -56,7 +56,7 @@ export function WorkRealitySection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="grid grid-cols-1 gap-4"
+              className="flex flex-wrap gap-3"
             >
               {[
                 { text: 'Контент каждый день' },
@@ -69,9 +69,9 @@ export function WorkRealitySection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all"
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3 hover:bg-white/10 transition-all"
                 >
-                  <p className="text-gray-300 font-medium">{item.text}</p>
+                  <p className="text-gray-300 font-medium text-sm">{item.text}</p>
                 </motion.div>
               ))}
             </motion.div>
