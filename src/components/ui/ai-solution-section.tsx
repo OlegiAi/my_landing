@@ -72,7 +72,7 @@ export function AISolutionSection() {
               className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-8 py-4 hover:bg-white/10 transition-all inline-block"
             >
               <p className="text-gray-200 font-medium text-base">
-                Все это ты получишь на практикуме по нейросетям
+                Этому ты научишься на практикуме по нейросетям
               </p>
             </motion.div>
           </motion.div>
