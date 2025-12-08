@@ -9,7 +9,7 @@ export function AISolutionSection() {
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black" />
 
-      <div className="container mx-auto px-4 py-20 relative z-10">
+      <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 items-center max-w-7xl mx-auto">
           {/* Левая часть - Картинка */}
           <motion.div
@@ -59,13 +59,7 @@ export function AISolutionSection() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-xl md:text-2xl text-gray-400 leading-relaxed mb-12"
             >
-              Войди в{' '}
-              <span className="text-white font-bold">20%</span> тех, кто делегирует ИИ задачи по контенту и маркетингу.{' '}
-              <span className="text-gray-200 font-semibold">
-                Ускорь свою работу в 5 раз
-              </span>{' '}
-              и сделай себе ИИ-сотрудников, которые будут выполнять{' '}
-              <span className="text-white font-bold">80% задач</span>.
+              Войди в число тех, кто делегирует ИИ задачи по контенту и маркетингу. Ускорь свою работу в 5 раз и сделай себе ИИ-сотрудников, которые будут выполнять 80% задач по контенту и маркетингу.
             </motion.p>
 
             {/* Декоративные элементы */}

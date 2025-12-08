@@ -9,7 +9,7 @@ export function WorkRealitySection() {
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black" />
 
-      <div className="container mx-auto px-4 py-20 relative z-10">
+      <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-center max-w-7xl mx-auto">
           {/* Левая часть - Текст */}
           <motion.div
@@ -42,12 +42,7 @@ export function WorkRealitySection() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-xl md:text-2xl text-gray-400 leading-relaxed mb-12"
             >
-              Каждый день бесконечные задачи по контенту и маркетингу.{' '}
-              <span className="text-gray-200 font-semibold">
-                Нужно что-то придумывать и делать самому
-              </span>{' '}
-              или платить{' '}
-              <span className="text-white font-bold">30-100к</span>, чтобы делали за тебя.
+              Каждый день бесконечные задачи по контенту и маркетингу. Нужно что-то придумывать и делать самому или платить 30-100к, чтобы делали за тебя.
             </motion.p>
 
             {/* Декоративные элементы */}
