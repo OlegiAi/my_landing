@@ -10,7 +10,7 @@ export function WorkRealitySection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black" />
 
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-center max-w-7xl mx-auto">
           {/* Левая часть - Текст */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -25,10 +25,9 @@ export function WorkRealitySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl md:text-6xl font-bold mb-8"
+              className="text-4xl md:text-6xl font-bold mb-8 whitespace-nowrap"
             >
-              <span className="text-white">Как выглядит работа</span>
-              <br />
+              <span className="text-white block">Как выглядит работа</span>
               <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
                 80% людей
               </span>
