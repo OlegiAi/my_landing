@@ -27,7 +27,8 @@ export function WorkRealitySection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl md:text-6xl font-bold mb-8"
             >
-              <span className="text-white">Как выглядит работа </span>
+              <span className="text-white">Как выглядит работа</span>
+              <br />
               <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
                 80% людей
               </span>
