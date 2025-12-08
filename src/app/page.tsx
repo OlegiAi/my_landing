@@ -5,6 +5,7 @@ import { AISolutionSection } from "@/components/ui/ai-solution-section";
 import { TargetAudienceSection } from "@/components/ui/target-audience-section";
 import { BeforeAfterSection } from "@/components/ui/before-after-section";
 import { ProgramSection } from "@/components/ui/program-section";
+import { ContentFactorySection } from "@/components/ui/content-factory-section";
 import { LearningProcessSection } from "@/components/ui/learning-process-section";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <TargetAudienceSection />
         <BeforeAfterSection />
         <ProgramSection />
+        <ContentFactorySection />
         <LearningProcessSection />
       </main>
     </>
