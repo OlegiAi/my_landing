@@ -62,30 +62,17 @@ export function AISolutionSection() {
               Войди в число тех, кто делегирует ИИ задачи по контенту и маркетингу. Ускорь свою работу в 5 раз и сделай себе ИИ-сотрудников, которые будут выполнять 80% задач по контенту и маркетингу.
             </motion.p>
 
-            {/* Декоративные элементы */}
+            {/* CTA плашка */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-wrap gap-3"
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-8 py-4 hover:bg-white/10 transition-all inline-block"
             >
-              {[
-                { text: 'Ускорь работу в 5 раз' },
-                { text: 'ИИ-сотрудники' },
-                { text: 'Автоматизация 80% задач' },
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3 hover:bg-white/10 transition-all"
-                >
-                  <p className="text-gray-300 font-medium text-sm">{item.text}</p>
-                </motion.div>
-              ))}
+              <p className="text-gray-200 font-medium text-base">
+                Все это ты получишь на практикуме по нейросетям
+              </p>
             </motion.div>
           </motion.div>
         </div>
