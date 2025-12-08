@@ -10,14 +10,32 @@ export function AISolutionSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black" />
 
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-center max-w-7xl mx-auto">
-          {/* Левая часть - Текст */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 items-center max-w-7xl mx-auto">
+          {/* Левая часть - Картинка */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative flex justify-center lg:justify-start items-start order-2 lg:order-1"
+          >
+            <Image
+              src="/расслаблен.jpg"
+              alt="Расслабленный персонаж"
+              width={400}
+              height={400}
+              className="w-full max-w-xs lg:max-w-sm object-contain"
+              priority
+            />
+          </motion.div>
+
+          {/* Правая часть - Текст */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-left"
+            className="text-left order-1 lg:order-2"
           >
             {/* Заголовок */}
             <motion.h2
@@ -75,24 +93,6 @@ export function AISolutionSection() {
                 </motion.div>
               ))}
             </motion.div>
-          </motion.div>
-
-          {/* Правая часть - Картинка */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative flex justify-center lg:justify-end items-start"
-          >
-            <Image
-              src="/расслаблен.jpg"
-              alt="Расслабленный персонаж"
-              width={400}
-              height={400}
-              className="w-full max-w-xs lg:max-w-sm object-contain"
-              priority
-            />
           </motion.div>
         </div>
       </div>
