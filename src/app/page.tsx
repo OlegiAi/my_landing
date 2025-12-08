@@ -3,7 +3,6 @@ import { Hero } from "@/components/ui/animated-hero";
 import { WorkRealitySection } from "@/components/ui/work-reality-section";
 import { AISolutionSection } from "@/components/ui/ai-solution-section";
 import { TargetAudienceSection } from "@/components/ui/target-audience-section";
-import { ComparisonSection } from "@/components/ui/comparison-section";
 import { BeforeAfterSection } from "@/components/ui/before-after-section";
 import { ProgramSection } from "@/components/ui/program-section";
 
@@ -16,7 +15,6 @@ export default function Home() {
         <WorkRealitySection />
         <AISolutionSection />
         <TargetAudienceSection />
-        <ComparisonSection />
         <BeforeAfterSection />
         <ProgramSection />
       </main>
