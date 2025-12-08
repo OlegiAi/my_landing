@@ -47,20 +47,35 @@ export function ContentFactorySection() {
 
           {/* Правая часть - Картинка */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative flex justify-center lg:justify-end items-start"
           >
-            <Image
-              src="/проекты.png"
-              alt="Проекты"
-              width={500}
-              height={500}
-              className="w-full max-w-md lg:max-w-lg object-contain"
-              priority
-            />
+            {/* Декоративный фон */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl blur-3xl" />
+
+            {/* Контейнер с рамкой */}
+            <motion.div
+              whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+              className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 hover:border-white/20 transition-all"
+            >
+              <Image
+                src="/проекты.png"
+                alt="Проекты"
+                width={500}
+                height={500}
+                className="w-full max-w-md lg:max-w-lg object-contain rounded-2xl"
+                priority
+              />
+
+              {/* Декоративные элементы по углам */}
+              <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-white/20 rounded-tl-lg" />
+              <div className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-white/20 rounded-tr-lg" />
+              <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-2 border-l-2 border-white/20 rounded-bl-lg" />
+              <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-white/20 rounded-br-lg" />
+            </motion.div>
           </motion.div>
         </div>
       </div>

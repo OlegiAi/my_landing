@@ -19,8 +19,8 @@ export default function Home() {
         <TargetAudienceSection />
         <BeforeAfterSection />
         <ProgramSection />
-        <ContentFactorySection />
         <LearningProcessSection />
+        <ContentFactorySection />
       </main>
     </>
   );
