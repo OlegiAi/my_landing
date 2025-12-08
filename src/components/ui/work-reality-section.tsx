@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 
 export function WorkRealitySection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
       {/* Background gradient effect */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,119,198,0.1),transparent_70%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black" />
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         <motion.div
@@ -22,13 +22,13 @@ export function WorkRealitySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-8"
+            className="text-4xl md:text-6xl font-bold mb-8"
           >
-            Как выглядит работа{' '}
-            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+            <span className="text-white">Как выглядит работа </span>
+            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
               80% людей
-            </span>{' '}
-            в онлайне
+            </span>
+            <span className="text-white"> в онлайне</span>
           </motion.h2>
 
           {/* Подзаголовок */}
@@ -37,14 +37,14 @@ export function WorkRealitySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl md:text-2xl text-gray-300 leading-relaxed"
+            className="text-xl md:text-2xl text-gray-400 leading-relaxed"
           >
             Каждый день бесконечные задачи по контенту и маркетингу.{' '}
-            <span className="text-white font-semibold">
+            <span className="text-gray-200 font-semibold">
               Нужно что-то придумывать и делать самому
             </span>{' '}
             или платить{' '}
-            <span className="text-red-400 font-bold">30-100к</span>, чтобы делали за тебя.
+            <span className="text-white font-bold">30-100к</span>, чтобы делали за тебя.
           </motion.p>
 
           {/* Декоративные элементы */}
@@ -56,9 +56,9 @@ export function WorkRealitySection() {
             className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6"
           >
             {[
-              { icon: '📝', text: 'Контент каждый день' },
-              { icon: '💰', text: 'Большие расходы' },
-              { icon: '⏰', text: 'Нет времени на рост' },
+              { text: 'Контент каждый день' },
+              { text: 'Большие расходы' },
+              { text: 'Нет времени на рост' },
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -68,7 +68,6 @@ export function WorkRealitySection() {
                 transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all"
               >
-                <div className="text-4xl mb-3">{item.icon}</div>
                 <p className="text-gray-300 font-medium">{item.text}</p>
               </motion.div>
             ))}
