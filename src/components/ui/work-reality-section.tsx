@@ -83,14 +83,14 @@ export function WorkRealitySection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative flex justify-center lg:justify-end"
+            className="relative flex justify-center lg:justify-end items-start"
           >
             <Image
               src="/злой.jpg"
               alt="Злой персонаж"
-              width={500}
-              height={500}
-              className="w-full max-w-md lg:max-w-lg object-contain"
+              width={400}
+              height={400}
+              className="w-full max-w-xs lg:max-w-sm object-contain"
               priority
             />
           </motion.div>
