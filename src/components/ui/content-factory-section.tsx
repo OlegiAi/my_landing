@@ -1,7 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+
+const floatingItems = [
+  { text: 'Посты', delay: 0, duration: 20, x: '-20%', y: '10%' },
+  { text: 'Рилсы', delay: 2, duration: 25, x: '80%', y: '20%' },
+  { text: 'Сторис', delay: 4, duration: 22, x: '-10%', y: '70%' },
+  { text: 'Сценарии', delay: 1, duration: 24, x: '85%', y: '75%' },
+  { text: 'Лендинги', delay: 3, duration: 23, x: '10%', y: '85%' },
+  { text: 'Статьи', delay: 5, duration: 21, x: '90%', y: '40%' },
+];
 
 export function ContentFactorySection() {
   return (
@@ -9,74 +17,70 @@ export function ContentFactorySection() {
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black" />
 
+      {/* Floating content pills */}
+      {floatingItems.map((item, index) => (
+        <motion.div
+          key={index}
+          className="absolute bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3 text-gray-400 text-sm font-medium pointer-events-none"
+          initial={{ x: item.x, y: item.y, opacity: 0 }}
+          animate={{
+            x: [item.x, `calc(${item.x} + 30px)`, item.x],
+            y: [item.y, `calc(${item.y} - 40px)`, item.y],
+            opacity: [0, 0.3, 0],
+          }}
+          transition={{
+            duration: item.duration,
+            delay: item.delay,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          {item.text}
+        </motion.div>
+      ))}
+
       <div className="container mx-auto px-4 py-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-center max-w-7xl mx-auto">
-          {/* Левая часть - Текст */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Заголовок */}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-left"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-4xl md:text-6xl font-bold mb-12"
           >
-            {/* Заголовок */}
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl md:text-6xl font-bold mb-8"
-            >
-              <span className="text-white">Главный результат — </span>
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                контент-завод
-              </span>
-            </motion.h2>
+            <span className="text-white">Главный результат — </span>
+            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              свои ИИ-сотрудники
+            </span>
+          </motion.h2>
 
-            {/* Подзаголовок */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-xl md:text-2xl text-gray-400 leading-relaxed mb-12"
-            >
-              У тебя будет свои ИИ-сотрудники, которые будут превращать один пост в разные форматы контента. Либо же работать отдельно по нужному тебе формату — тебе нужно лишь поставить задачу и дать контекст своего проекта.
-            </motion.p>
-          </motion.div>
-
-          {/* Правая часть - Картинка */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative flex justify-center lg:justify-end items-start"
-          >
-            {/* Декоративный фон */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl blur-3xl" />
-
-            {/* Контейнер с рамкой */}
-            <motion.div
-              whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-              className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-[32px] p-6 hover:border-white/20 transition-all overflow-hidden"
-            >
-              <Image
-                src="/проекты.png"
-                alt="Проекты"
-                width={500}
-                height={500}
-                className="w-full max-w-md lg:max-w-lg object-contain rounded-[24px]"
-                priority
-              />
-
-              {/* Декоративные элементы по углам */}
-              <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-white/20 rounded-tl-lg" />
-              <div className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-white/20 rounded-tr-lg" />
-              <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-2 border-l-2 border-white/20 rounded-bl-lg" />
-              <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-white/20 rounded-br-lg" />
-            </motion.div>
-          </motion.div>
+          {/* Список результатов */}
+          <div className="space-y-6">
+            {[
+              'Научишься их создавать и обучать под любую работу с контент-маркетингом',
+              'Сможешь из одного поста делать разные форматы контента за 2 минуты',
+              'Узнаешь принципы работы и фишки, применимые везде',
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/8 hover:border-white/20 transition-all"
+              >
+                <div className="flex items-start gap-4">
+                  <span className="text-2xl font-bold text-white bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent flex-shrink-0">
+                    {index + 1}.
+                  </span>
+                  <p className="text-lg md:text-xl text-gray-300 leading-relaxed text-left">
+                    {item}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
