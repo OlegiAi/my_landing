@@ -45,10 +45,11 @@ export function AISolutionSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl md:text-6xl font-bold mb-8"
             >
-              <span className="text-white">Отдай свою работу </span>
+              <span className="text-white">Пусть </span>
               <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                нейросетям
+                нейросети
               </span>
+              <span className="text-white"> работают за тебя</span>
             </motion.h2>
 
             {/* Подзаголовок */}
