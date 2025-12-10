@@ -20,8 +20,8 @@ const navItems = [
     icon: BookOpen,
   },
   {
-    name: "Результат",
-    url: "#result",
+    name: "Результаты",
+    url: "#results",
     icon: Trophy,
   },
 ];

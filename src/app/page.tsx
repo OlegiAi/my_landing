@@ -7,6 +7,10 @@ import { BeforeAfterSection } from "@/components/ui/before-after-section";
 import { ProgramSection } from "@/components/ui/program-section";
 import { ContentFactorySection } from "@/components/ui/content-factory-section";
 import { LearningProcessSection } from "@/components/ui/learning-process-section";
+import { PricingSection } from "@/components/ui/pricing-section";
+import { FAQSection } from "@/components/ui/faq-section";
+import { PricingInfoSection } from "@/components/ui/pricing-info-section";
+import { Footer } from "@/components/ui/footer";
 
 export default function Home() {
   return (
@@ -17,11 +21,15 @@ export default function Home() {
         <WorkRealitySection />
         <AISolutionSection />
         <TargetAudienceSection />
-        <BeforeAfterSection />
         <ProgramSection />
         <LearningProcessSection />
+        <BeforeAfterSection />
         <ContentFactorySection />
+        <PricingSection />
+        <PricingInfoSection />
+        <FAQSection />
       </main>
+      <Footer />
     </>
   );
 }

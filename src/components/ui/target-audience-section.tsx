@@ -46,7 +46,7 @@ export function TargetAudienceSection() {
     <div id="for-whom" className="w-full bg-muted/30">
       <div className="container mx-auto px-4 py-20 lg:py-32">
         <h2 className="text-4xl md:text-5xl font-semibold text-center mb-16 max-w-4xl mx-auto bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 dark:from-white dark:via-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
-          Этот практикум для тебя, если ты:
+          Для кого этот практикум
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -66,7 +66,7 @@ export function TargetAudienceSection() {
                 </h3>
 
                 <div className="mb-6">
-                  <p className="font-semibold text-muted-foreground mb-3">
+                  <p className="font-semibold mb-3 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 dark:from-white dark:via-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
                     Тебе нужно:
                   </p>
                   <ul className="space-y-2">
@@ -80,7 +80,7 @@ export function TargetAudienceSection() {
                 </div>
 
                 <div>
-                  <p className="font-semibold text-muted-foreground mb-3">
+                  <p className="font-semibold mb-3 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 dark:from-white dark:via-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
                     После практикума:
                   </p>
                   <p className="text-muted-foreground leading-relaxed">

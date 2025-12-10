@@ -10,27 +10,29 @@ import {
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
+interface ButtonProps {
+  borderRadius?: string;
+  children: React.ReactNode;
+  as?: keyof JSX.IntrinsicElements;
+  containerClassName?: string;
+  borderClassName?: string;
+  duration?: number;
+  className?: string;
+  style?: React.CSSProperties;
+}
+
 export function Button({
   borderRadius = "1.75rem",
   children,
-  as: Component = "button",
+  as: Tag = "button",
   containerClassName,
   borderClassName,
   duration,
   className,
   ...otherProps
-}: {
-  borderRadius?: string;
-  children: React.ReactNode;
-  as?: any;
-  containerClassName?: string;
-  borderClassName?: string;
-  duration?: number;
-  className?: string;
-  [key: string]: any;
-}) {
+}: ButtonProps) {
   return (
-    <Component
+    <Tag
       className={cn(
         "bg-transparent relative text-xl  h-16 w-40 p-[1px] overflow-hidden ",
         containerClassName
@@ -65,7 +67,7 @@ export function Button({
       >
         {children}
       </div>
-    </Component>
+    </Tag>
   );
 }
 
@@ -80,9 +82,9 @@ export const MovingBorder = ({
   duration?: number;
   rx?: string;
   ry?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }) => {
-  const pathRef = useRef<any>();
+  const pathRef = useRef<SVGRectElement | null>(null);
   const progress = useMotionValue<number>(0);
 
   useAnimationFrame((time) => {

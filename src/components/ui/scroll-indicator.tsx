@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function ScrollIndicator() {
   const scrollToNext = () => {
-    const nextSection = document.getElementById("for-whom");
+    const nextSection = document.getElementById("work-reality");
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: "smooth" });
     }

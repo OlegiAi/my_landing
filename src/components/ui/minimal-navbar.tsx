@@ -18,7 +18,7 @@ interface NavBarProps {
   defaultActive?: string
 }
 
-export function MinimalNavBar({ items, className, defaultActive = "Home" }: NavBarProps) {
+export function MinimalNavBar({ items, defaultActive = "Home" }: NavBarProps) {
   const [mounted, setMounted] = useState(false)
   const [hoveredTab, setHoveredTab] = useState<string | null>(null)
   const [activeTab, setActiveTab] = useState<string>(defaultActive)
@@ -30,10 +30,10 @@ export function MinimalNavBar({ items, className, defaultActive = "Home" }: NavB
   if (!mounted) return null
 
   return (
-    <div className="fixed top-5 left-0 right-0 z-[9999]">
-      <div className="flex justify-center pt-6">
+    <div className="fixed top-3 left-0 right-0 z-[9999]">
+      <div className="flex justify-center">
         <motion.div
-          className="flex items-center gap-3 bg-black/50 border border-white/10 backdrop-blur-lg py-2 px-2 rounded-full shadow-lg relative"
+          className="flex items-center gap-3 bg-black/50 border border-white/10 backdrop-blur-lg py-1.5 px-2 rounded-full shadow-lg relative"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
@@ -63,7 +63,7 @@ export function MinimalNavBar({ items, className, defaultActive = "Home" }: NavB
                 onMouseEnter={() => setHoveredTab(item.name)}
                 onMouseLeave={() => setHoveredTab(null)}
                 className={cn(
-                  "relative cursor-pointer text-sm font-semibold px-6 py-3 rounded-full transition-all duration-300",
+                  "relative cursor-pointer text-xs md:text-sm font-medium px-4 py-2 rounded-full transition-all duration-300",
                   "text-white/70 hover:text-white",
                   isActive && "text-white"
                 )}
@@ -115,6 +115,24 @@ export function MinimalNavBar({ items, className, defaultActive = "Home" }: NavB
               </Link>
             )
           })}
+
+          {/* Кнопка "Узнать стоимость" */}
+          <motion.a
+            href="#pricing-info"
+            onClick={(e) => {
+              e.preventDefault()
+              const element = document.querySelector('#pricing-info')
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' })
+              }
+            }}
+            className="relative cursor-pointer text-xs md:text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 text-white/80 hover:text-white border border-white/20 hover:border-white/40 hover:bg-white/5 ml-1"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <span className="hidden md:inline">Узнать стоимость</span>
+            <span className="md:hidden">💰</span>
+          </motion.a>
         </motion.div>
       </div>
     </div>

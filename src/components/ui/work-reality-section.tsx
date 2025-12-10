@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export function WorkRealitySection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
+    <section id="work-reality" className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black" />
 

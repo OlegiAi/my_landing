@@ -69,31 +69,19 @@ export function LearningProcessSection() {
                 { icon: icons.blocks, text: 'Все материалы структурированы по блокам' },
                 { icon: icons.copy, text: 'Готовые инструкции «скопировал-вставил»' },
                 { icon: icons.link, text: 'Ссылки на нейросети и примеры промптов' },
-                { icon: icons.refresh, text: 'Возвращаешься к нужному разделу в любой момент' },
+                { icon: icons.refresh, text: 'Удобно возвращаться к нужному материалу' },
               ].map((item, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.3 + index * 0.1,
-                    ease: [0.4, 0, 0.2, 1]
-                  }}
-                  whileHover={{ y: -8, transition: { duration: 0.3, ease: "easeOut" } }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/8 hover:border-white/20 transition-all cursor-pointer group"
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/8 hover:border-white/20 transition-all duration-300 cursor-pointer group hover:scale-105"
                 >
-                  <motion.div
-                    className="text-gray-400 group-hover:text-white transition-colors duration-300 mb-6"
-                    whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-                  >
+                  <div className="text-gray-400 group-hover:text-white transition-colors duration-300 mb-6">
                     {item.icon}
-                  </motion.div>
+                  </div>
                   <p className="text-gray-300 text-lg leading-relaxed group-hover:text-white transition-colors duration-300">
                     {item.text}
                   </p>
-                </motion.div>
+                </div>
               ))}
             </div>
 

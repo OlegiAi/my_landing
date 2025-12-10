@@ -1,14 +1,12 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-
 export function BeforeAfterSection() {
   const beforePoints = [
     "Придумываешь идеи контента и пишешь тексты по 2-4 часа",
-    "Нанимаешь подрядчиков за 50-80к в месяц, тратишь время и нервы на работу с ними",
+    "Нанимаешь подрядчиков за 30-100к в месяц, тратишь время и нервы на работу с ними",
     "Нерегулярно ведешь соцсети, выгораешь от контента",
     "Неделю собираешь тексты для сайта, продающую статью или воронку",
-    "ChatGPT выдает шаблонные тексты с оборотами \"важно отметить\" и \"погружаясь в мир\""
+    "ChatGPT выдает шаблонные тексты с оборотами «Это не просто текст. Это реальный... Без сторис. Без найма. Просто сделал миллион»"
   ];
 
   const afterPoints = [
@@ -23,7 +21,7 @@ export function BeforeAfterSection() {
     <div id="results" className="w-full">
       <div className="container mx-auto px-4 py-20 lg:py-32">
         <h2 className="text-4xl md:text-5xl font-semibold text-center mb-16 max-w-4xl mx-auto bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 dark:from-white dark:via-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
-          Как изменится твоя жизнь после практикума
+          Как изменится твоя жизнь<br />после практикума
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -56,12 +54,6 @@ export function BeforeAfterSection() {
               ))}
             </ul>
           </div>
-        </div>
-
-        <div className="flex justify-center mt-12">
-          <Button size="lg">
-            Посмотреть программу
-          </Button>
         </div>
       </div>
     </div>
