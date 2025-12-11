@@ -7,7 +7,7 @@ export function AISolutionSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
       {/* Background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-950 to-black" />
 
       <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 items-center max-w-7xl mx-auto">

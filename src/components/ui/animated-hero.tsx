@@ -26,7 +26,8 @@ function Hero() {
   }, [titleNumber, titles]);
 
   return (
-    <div id="hero" className="w-full relative h-screen flex items-center justify-center">
+    <div id="hero" className="w-full relative h-screen flex items-center justify-center bg-black overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-950 to-black" />
       <GradientSpheres />
       <FloatingAILogos />
       <div className="container mx-auto px-4">

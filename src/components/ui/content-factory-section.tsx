@@ -16,9 +16,7 @@ const floatingItemsData = [
 
 export function ContentFactorySection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black" />
+    <section className="relative min-h-screen flex items-center justify-center bg-muted/30 overflow-hidden">
 
       {/* Floating content pills */}
       {floatingItemsData.map((item, index) => (
@@ -73,7 +71,7 @@ export function ContentFactorySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/8 hover:border-white/20 transition-all"
+              className="bg-neutral-900/50 backdrop-blur-sm border border-neutral-800/50 rounded-2xl p-6 hover:bg-neutral-900/60 hover:border-neutral-700/50 transition-all"
             >
               <div className="flex items-start gap-4">
                 <div className="flex-1">

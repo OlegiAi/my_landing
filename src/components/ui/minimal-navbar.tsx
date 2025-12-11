@@ -27,6 +27,37 @@ export function MinimalNavBar({ items, defaultActive = "Home" }: NavBarProps) {
     setMounted(true)
   }, [])
 
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-50% 0px -50% 0px',
+      threshold: 0
+    }
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id
+          const matchingItem = items.find(item => item.url === `#${sectionId}`)
+          if (matchingItem) {
+            setActiveTab(matchingItem.name)
+          }
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions)
+
+    items.forEach((item) => {
+      const element = document.querySelector(item.url)
+      if (element) {
+        observer.observe(element)
+      }
+    })
+
+    return () => observer.disconnect()
+  }, [items])
+
   if (!mounted) return null
 
   return (

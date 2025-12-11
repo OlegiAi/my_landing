@@ -32,9 +32,7 @@ const icons = {
 
 export function LearningProcessSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black" />
+    <section className="relative min-h-screen flex items-center justify-center bg-muted/30 overflow-hidden">
 
       <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="max-w-5xl mx-auto">
@@ -73,7 +71,7 @@ export function LearningProcessSection() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/8 hover:border-white/20 transition-all duration-300 cursor-pointer group hover:scale-105"
+                  className="bg-neutral-900/50 backdrop-blur-sm border border-neutral-800/50 rounded-2xl p-8 hover:bg-neutral-900/60 hover:border-neutral-700/50 transition-all duration-300 cursor-pointer group hover:scale-[1.02]"
                 >
                   <div className="text-gray-400 group-hover:text-white transition-colors duration-300 mb-6">
                     {item.icon}

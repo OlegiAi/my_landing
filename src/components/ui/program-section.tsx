@@ -212,8 +212,9 @@ export function ProgramSection() {
   ];
 
   return (
-    <div id="program" className="w-full">
-      <div className="container mx-auto px-4 py-20 lg:py-32">
+    <div id="program" className="w-full relative bg-black overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-950 to-black" />
+      <div className="container mx-auto px-4 py-20 lg:py-32 relative z-10">
         <h2 className="text-4xl md:text-5xl font-semibold text-center mb-8 max-w-4xl mx-auto bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 dark:from-white dark:via-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
           ПРОГРАММА ПРАКТИКУМА
         </h2>
@@ -249,7 +250,7 @@ export function ProgramSection() {
               inactiveZone={0.01}
               borderWidth={2}
             />
-            <div className="relative min-h-[400px] rounded-lg border border-border bg-card p-6 md:p-8 shadow-lg shadow-gray-500/10 hover:shadow-xl hover:shadow-gray-400/20 transition-all duration-300">
+            <div className="relative min-h-[400px] rounded-lg border border-border bg-card p-6 md:p-8 shadow-lg shadow-gray-500/10 hover:shadow-xl hover:shadow-gray-400/10 transition-all duration-300">
               {tabs[activeTab].content}
             </div>
           </div>

@@ -27,8 +27,9 @@ export function PricingSection() {
   ];
 
   return (
-    <div id="pricing" className="w-full bg-muted/30">
-      <div className="container mx-auto px-4 py-20 lg:py-32">
+    <div id="pricing" className="w-full relative bg-black overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-950 to-black" />
+      <div className="container mx-auto px-4 py-20 lg:py-32 relative z-10">
         <h2 className="text-4xl md:text-5xl font-semibold text-center mb-8 max-w-4xl mx-auto bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 dark:from-white dark:via-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
           Выбери свой путь
         </h2>
@@ -47,7 +48,7 @@ export function PricingSection() {
               inactiveZone={0.01}
               borderWidth={2}
             />
-            <div className="relative bg-background rounded-lg p-8 shadow-lg shadow-gray-500/10 border border-border hover:shadow-xl hover:shadow-gray-400/20 transition-all duration-300 h-full">
+            <div className="relative bg-background rounded-lg p-8 shadow-lg shadow-gray-500/10 border border-border hover:shadow-xl hover:shadow-gray-400/10 transition-all duration-300 h-full">
               <h3 className="text-2xl font-semibold mb-6 text-center">
                 Стандартный путь
               </h3>
@@ -80,7 +81,7 @@ export function PricingSection() {
               inactiveZone={0.01}
               borderWidth={2}
             />
-            <div className="relative bg-primary/5 rounded-lg p-8 shadow-lg shadow-gray-500/10 border-2 border-primary/20 hover:shadow-xl hover:shadow-gray-400/20 transition-all duration-300 h-full">
+            <div className="relative bg-primary/5 rounded-lg p-8 shadow-lg shadow-gray-500/10 border-2 border-primary/20 hover:shadow-xl hover:shadow-gray-400/10 transition-all duration-300 h-full">
               <h3 className="text-2xl font-semibold mb-6 text-center">
                 С нейросетями
               </h3>

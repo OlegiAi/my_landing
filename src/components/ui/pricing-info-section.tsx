@@ -36,7 +36,12 @@ export function PricingInfoSection() {
               inactiveZone={0.01}
               borderWidth={2}
             />
-            <div className="relative bg-background rounded-lg p-8 shadow-lg shadow-gray-500/10 border border-border hover:shadow-xl hover:shadow-gray-400/20 transition-all duration-300">
+            <div className="relative bg-background rounded-lg p-8 shadow-lg shadow-gray-500/10 border border-border hover:shadow-xl hover:shadow-gray-400/10 transition-all duration-300">
+              {/* Tariff Title */}
+              <h3 className="text-2xl font-semibold text-center mb-6 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 dark:from-white dark:via-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
+                Единый тариф
+              </h3>
+
               {/* Included Items */}
               <div className="space-y-4 mb-8">
                 {includedItems.map((item, index) => (
