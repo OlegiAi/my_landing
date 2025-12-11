@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export function PricingSection() {
   const standardPricing = [
@@ -37,51 +38,71 @@ export function PricingSection() {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Стандартный путь */}
-          <div className="relative bg-background rounded-lg p-8 shadow-md border border-border h-full">
-            <h3 className="text-2xl font-semibold mb-6 text-center">
-              Стандартный путь
-            </h3>
+          <div className="relative rounded-lg p-[2px] h-full">
+            <GlowingEffect
+              spread={40}
+              glow={true}
+              disabled={false}
+              proximity={64}
+              inactiveZone={0.01}
+              borderWidth={2}
+            />
+            <div className="relative bg-background rounded-lg p-8 shadow-lg shadow-gray-500/10 border border-border hover:shadow-xl hover:shadow-gray-400/20 transition-all duration-300 h-full">
+              <h3 className="text-2xl font-semibold mb-6 text-center">
+                Стандартный путь
+              </h3>
 
-            <div className="space-y-4 mb-6">
-              {standardPricing.map((item, index) => (
-                <div key={index} className="flex justify-between items-center pb-3 border-b border-border">
-                  <span className="text-muted-foreground">{item.service}</span>
-                  <span className="font-semibold text-lg">{item.price}</span>
+              <div className="space-y-4 mb-6">
+                {standardPricing.map((item, index) => (
+                  <div key={index} className="flex justify-between items-center pb-3 border-b border-border">
+                    <span className="text-muted-foreground">{item.service}</span>
+                    <span className="font-semibold text-lg">{item.price}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6 pt-6 border-t-2 border-border">
+                <div className="flex justify-between items-center">
+                  <span className="text-lg font-semibold">Итого в месяц:</span>
+                  <span className="text-2xl font-bold text-primary">80 000 ₽</span>
                 </div>
-              ))}
-            </div>
-
-            <div className="mt-6 pt-6 border-t-2 border-border">
-              <div className="flex justify-between items-center">
-                <span className="text-lg font-semibold">Итого в месяц:</span>
-                <span className="text-2xl font-bold text-primary">80 000 ₽</span>
               </div>
             </div>
           </div>
 
           {/* С нейросетями */}
-          <div className="relative bg-primary/5 rounded-lg p-8 shadow-md border-2 border-primary/20 h-full">
-            <h3 className="text-2xl font-semibold mb-6 text-center">
-              С нейросетями
-            </h3>
+          <div className="relative rounded-lg p-[2px] h-full">
+            <GlowingEffect
+              spread={40}
+              glow={true}
+              disabled={false}
+              proximity={64}
+              inactiveZone={0.01}
+              borderWidth={2}
+            />
+            <div className="relative bg-primary/5 rounded-lg p-8 shadow-lg shadow-gray-500/10 border-2 border-primary/20 hover:shadow-xl hover:shadow-gray-400/20 transition-all duration-300 h-full">
+              <h3 className="text-2xl font-semibold mb-6 text-center">
+                С нейросетями
+              </h3>
 
-            <div className="space-y-4 mb-6">
-              {aiPricing.map((item, index) => (
-                <div key={index} className="flex justify-between items-center pb-3 border-b border-border">
-                  <span className="text-muted-foreground">{item.service}</span>
-                  <span className="font-semibold text-lg">{item.time}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-6 pt-6 border-t-2 border-border">
-              <div className="flex justify-between items-center mb-3">
-                <span className="text-muted-foreground">Оплата Claude Sonnet Pro</span>
-                <span className="font-semibold text-lg">20 $</span>
+              <div className="space-y-4 mb-6">
+                {aiPricing.map((item, index) => (
+                  <div key={index} className="flex justify-between items-center pb-3 border-b border-border">
+                    <span className="text-muted-foreground">{item.service}</span>
+                    <span className="font-semibold text-lg">{item.time}</span>
+                  </div>
+                ))}
               </div>
-              <div className="flex justify-between items-center">
-                <span className="text-lg font-semibold">Итого в месяц:</span>
-                <span className="text-2xl font-bold text-primary">2 000 ₽</span>
+
+              <div className="mt-6 pt-6 border-t-2 border-border">
+                <div className="flex justify-between items-center mb-3">
+                  <span className="text-muted-foreground">Оплата Claude Sonnet Pro</span>
+                  <span className="font-semibold text-lg">20 $</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-lg font-semibold">Итого в месяц:</span>
+                  <span className="text-2xl font-bold text-primary">2 000 ₽</span>
+                </div>
               </div>
             </div>
           </div>

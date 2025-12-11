@@ -1,5 +1,7 @@
 "use client";
 
+import { GlowingEffect } from "@/components/ui/glowing-effect";
+
 export function BeforeAfterSection() {
   const beforePoints = [
     "Придумываешь идеи контента и пишешь тексты по 2-4 часа",
@@ -26,33 +28,53 @@ export function BeforeAfterSection() {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* ДО практикума */}
-          <div className="bg-muted/50 rounded-lg p-8 border border-border">
-            <h3 className="text-2xl font-semibold mb-6 text-muted-foreground">
-              ДО практикума:
-            </h3>
-            <ul className="space-y-4">
-              {beforePoints.map((point, index) => (
-                <li key={index} className="flex items-start text-muted-foreground">
-                  <span className="mr-3 mt-1 text-destructive">✗</span>
-                  <span className="leading-relaxed">{point}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="relative rounded-lg p-[2px]">
+            <GlowingEffect
+              spread={40}
+              glow={true}
+              disabled={false}
+              proximity={64}
+              inactiveZone={0.01}
+              borderWidth={2}
+            />
+            <div className="relative bg-muted/50 rounded-lg p-8 border border-border shadow-lg shadow-gray-500/10 hover:shadow-xl hover:shadow-gray-400/20 transition-all duration-300">
+              <h3 className="text-2xl font-semibold mb-6 text-muted-foreground">
+                ДО практикума:
+              </h3>
+              <ul className="space-y-4">
+                {beforePoints.map((point, index) => (
+                  <li key={index} className="flex items-start text-muted-foreground">
+                    <span className="mr-3 mt-1 text-destructive">✗</span>
+                    <span className="leading-relaxed">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* ПОСЛЕ практикума */}
-          <div className="bg-primary/5 rounded-lg p-8 border-2 border-primary/20">
-            <h3 className="text-2xl font-semibold mb-6">
-              ПОСЛЕ практикума:
-            </h3>
-            <ul className="space-y-4">
-              {afterPoints.map((point, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="mr-3 mt-1 text-green-600">✓</span>
-                  <span className="leading-relaxed">{point}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="relative rounded-lg p-[2px]">
+            <GlowingEffect
+              spread={40}
+              glow={true}
+              disabled={false}
+              proximity={64}
+              inactiveZone={0.01}
+              borderWidth={2}
+            />
+            <div className="relative bg-primary/5 rounded-lg p-8 border-2 border-primary/20 shadow-lg shadow-gray-500/10 hover:shadow-xl hover:shadow-gray-400/20 transition-all duration-300">
+              <h3 className="text-2xl font-semibold mb-6">
+                ПОСЛЕ практикума:
+              </h3>
+              <ul className="space-y-4">
+                {afterPoints.map((point, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="mr-3 mt-1 text-green-600">✓</span>
+                    <span className="leading-relaxed">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export function ProgramSection() {
   const [activeTab, setActiveTab] = useState(0);
@@ -239,8 +240,18 @@ export function ProgramSection() {
           </div>
 
           {/* Контент активного таба */}
-          <div className="min-h-[400px] rounded-lg border border-border bg-card p-6 md:p-8">
-            {tabs[activeTab].content}
+          <div className="relative rounded-lg p-[2px]">
+            <GlowingEffect
+              spread={40}
+              glow={true}
+              disabled={false}
+              proximity={64}
+              inactiveZone={0.01}
+              borderWidth={2}
+            />
+            <div className="relative min-h-[400px] rounded-lg border border-border bg-card p-6 md:p-8 shadow-lg shadow-gray-500/10 hover:shadow-xl hover:shadow-gray-400/20 transition-all duration-300">
+              {tabs[activeTab].content}
+            </div>
           </div>
 
           <div className="flex justify-center mt-12">

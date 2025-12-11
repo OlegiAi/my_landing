@@ -70,7 +70,16 @@ function Hero() {
             </p>
           </div>
           <div className="flex justify-center">
-            <Button size="lg" className="text-lg px-10">
+            <Button
+              size="lg"
+              className="text-lg px-10"
+              onClick={() => {
+                const element = document.querySelector('#program');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               Посмотреть программу
             </Button>
           </div>
