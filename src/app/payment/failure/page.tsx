@@ -15,12 +15,17 @@ export default function PaymentFailurePage() {
         <h1 className="text-3xl font-bold">Оплата не прошла</h1>
 
         <p className="text-muted-foreground text-lg">
-          К сожалению, при оплате произошла ошибка. Попробуйте еще раз или свяжитесь с поддержкой.
+          К сожалению, при оплате произошла ошибка. Попробуйте еще раз или свяжитесь со мной лично в Telegram.
         </p>
 
         <div className="space-y-3 pt-4">
           <Button asChild size="lg" className="w-full">
             <Link href="/#pricing-info">Попробовать снова</Link>
+          </Button>
+          <Button asChild size="lg" className="w-full">
+            <a href="https://t.me/olejlen" target="_blank" rel="noopener noreferrer">
+              Написать в Telegram
+            </a>
           </Button>
           <Button asChild variant="outline" size="lg" className="w-full">
             <Link href="/">Вернуться на главную</Link>
