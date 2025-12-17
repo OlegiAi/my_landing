@@ -3,10 +3,11 @@
 import { Button } from "@/components/ui/button";
 import { Check, Loader2 } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function PricingInfoSection() {
   const [isLoading, setIsLoading] = useState(false);
+  const [isTestMode, setIsTestMode] = useState(false);
 
   const includedItems = [
     "3 модуля практикума в Notion",
@@ -16,17 +17,29 @@ export function PricingInfoSection() {
     "Материалы сразу после оплаты",
   ];
 
+  // Проверяем параметр ?test=true в URL
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setIsTestMode(params.get("test") === "true");
+  }, []);
+
   const handlePayment = async () => {
     setIsLoading(true);
     try {
+      // В тестовом режиме платеж за 1₽, иначе за 6900₽
+      const amount = isTestMode ? "1.00" : "6900.00";
+      const description = isTestMode
+        ? "ТЕСТ - Практикум по работе с нейросетями"
+        : "Практикум по работе с нейросетями";
+
       const response = await fetch("/api/create-payment", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          amount: "6900.00",
-          description: "Практикум по работе с нейросетями",
+          amount,
+          description,
         }),
       });
 
@@ -114,9 +127,17 @@ export function PricingInfoSection() {
                     Создание платежа...
                   </>
                 ) : (
-                  "Оплатить"
+                  <>
+                    {isTestMode && "🧪 ТЕСТ 1₽ - "}
+                    Оплатить
+                  </>
                 )}
               </Button>
+              {isTestMode && (
+                <p className="text-center text-sm text-muted-foreground mt-2">
+                  🧪 Тестовый режим активирован - платеж 1₽
+                </p>
+              )}
             </div>
           </div>
         </div>
