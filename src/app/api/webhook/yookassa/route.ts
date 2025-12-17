@@ -15,6 +15,61 @@ function verifySignature(body: string, signature: string | null): boolean {
   return hmac === signature;
 }
 
+// Отправка уведомления в Telegram
+async function sendTelegramNotification(payment: {
+  id: string;
+  amount?: { value: string; currency: string };
+  created_at?: string;
+  status: string;
+}): Promise<void> {
+  const botToken = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+
+  if (!botToken || !chatId) {
+    console.error("❌ Telegram credentials not configured");
+    return;
+  }
+
+  const date = payment.created_at
+    ? new Date(payment.created_at).toLocaleString("ru-RU", {
+        day: "2-digit",
+        month: "short",
+        hour: "2-digit",
+        minute: "2-digit",
+      })
+    : "не указано";
+
+  const message = `💰 НОВАЯ ОПЛАТА!
+
+Сумма: ${payment.amount?.value} ${payment.amount?.currency}
+ID платежа: ${payment.id.substring(0, 8)}...
+Время: ${date}
+Статус: ${payment.status === "succeeded" ? "✅ Успешно" : payment.status}`;
+
+  try {
+    const response = await fetch(
+      `https://api.telegram.org/bot${botToken}/sendMessage`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: "HTML",
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      console.error("❌ Failed to send Telegram notification");
+    } else {
+      console.log("✅ Telegram notification sent");
+    }
+  } catch (error) {
+    console.error("❌ Telegram notification error:", error);
+  }
+}
+
 export async function POST(request: Request) {
   try {
     // Читаем тело запроса
@@ -53,11 +108,8 @@ export async function POST(request: Request) {
           metadata: payment.metadata,
         });
 
-        // Здесь можно:
-        // - Сохранить данные в базу данных
-        // - Отправить email с доступом
-        // - Обновить статус заказа
-        // - Отправить уведомление в Telegram
+        // Отправляем уведомление в Telegram
+        await sendTelegramNotification(payment);
 
         break;
 
