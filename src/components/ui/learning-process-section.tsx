@@ -34,7 +34,7 @@ export function LearningProcessSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-muted/30 overflow-hidden">
 
-      <div className="container mx-auto px-4 py-12 relative z-10">
+      <div className="container mx-auto px-6 py-16 md:py-12 relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Заголовок */}
           <motion.h2
@@ -42,7 +42,7 @@ export function LearningProcessSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-6xl font-bold text-white text-center mb-16"
+            className="text-4xl md:text-6xl font-bold text-white text-center mb-16 text-balance"
           >
             Как проходит обучение
           </motion.h2>
@@ -55,7 +55,7 @@ export function LearningProcessSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-12"
           >
-            <h3 className="text-2xl md:text-3xl font-semibold text-white mb-8 text-center">
+            <h3 className="text-2xl md:text-3xl font-semibold text-white mb-8 text-center text-balance">
               Формат:{' '}
               <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
                 текстовый практикум в Notion
@@ -67,11 +67,11 @@ export function LearningProcessSection() {
                 { icon: icons.blocks, text: 'Все материалы структурированы по блокам' },
                 { icon: icons.copy, text: 'Готовые инструкции «скопировал-вставил»' },
                 { icon: icons.link, text: 'Ссылки на нейросети и примеры промптов' },
-                { icon: icons.refresh, text: 'Удобно возвращаться к нужному материалу' },
+                { icon: icons.refresh, text: 'Гайд, как с нуля обучить любого ИИ-сотрудника' },
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-neutral-900/50 backdrop-blur-sm border border-neutral-800/50 rounded-2xl p-8 hover:bg-neutral-900/60 hover:border-neutral-700/50 transition-all duration-300 cursor-pointer group hover:scale-[1.02]"
+                  className="bg-white/[0.03] backdrop-blur-sm border border-white/[0.15] rounded-2xl p-8 hover:bg-white/[0.06] hover:border-white/[0.25] transition-all duration-300 cursor-pointer group hover:scale-[1.02] shadow-lg"
                 >
                   <div className="text-gray-400 group-hover:text-white transition-colors duration-300 mb-6">
                     {item.icon}
@@ -88,7 +88,7 @@ export function LearningProcessSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="text-gray-400 text-base md:text-lg leading-relaxed text-center"
+              className="text-gray-400 text-base md:text-lg leading-relaxed text-center text-pretty"
             >
               Для работы нужна подписка на нейросеть Claude, но все применимо и к другим ИИ, где есть функция проектов
             </motion.p>

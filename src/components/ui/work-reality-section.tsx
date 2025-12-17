@@ -7,7 +7,7 @@ export function WorkRealitySection() {
   return (
     <section id="work-reality" className="relative min-h-screen flex items-center justify-center bg-muted/30 overflow-hidden">
 
-      <div className="container mx-auto px-4 py-12 relative z-10">
+      <div className="container mx-auto px-6 py-16 md:py-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-center max-w-7xl mx-auto">
           {/* Левая часть - Текст */}
           <motion.div
@@ -23,7 +23,7 @@ export function WorkRealitySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl md:text-6xl font-bold mb-8 whitespace-nowrap"
+              className="text-4xl md:text-6xl font-bold mb-8 text-balance"
             >
               <span className="text-white block">Как выглядит работа</span>
               <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
@@ -38,7 +38,7 @@ export function WorkRealitySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-xl md:text-2xl text-gray-400 leading-relaxed mb-12"
+              className="text-xl md:text-2xl text-gray-400 leading-relaxed mb-12 text-pretty"
             >
               Каждый день бесконечные задачи по контенту и маркетингу. Нужно что-то придумывать и делать самому или платить 30-100к, чтобы делали за тебя.
             </motion.p>

@@ -45,7 +45,7 @@ export function TargetAudienceSection() {
   return (
     <div id="for-whom" className="w-full bg-muted/30">
       <div className="container mx-auto px-4 py-20 lg:py-32">
-        <h2 className="text-4xl md:text-5xl font-semibold text-center mb-16 max-w-4xl mx-auto bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 dark:from-white dark:via-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-semibold text-center mb-16 max-w-4xl mx-auto bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 dark:from-white dark:via-gray-200 dark:to-gray-400 bg-clip-text text-transparent text-balance">
           Для кого этот практикум
         </h2>
 

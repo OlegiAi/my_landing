@@ -20,7 +20,7 @@ export function FAQSection() {
     <div id="faq" className="w-full relative bg-black overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-950 to-black" />
       <div className="container mx-auto px-4 py-20 lg:py-32 relative z-10">
-        <h2 className="text-4xl md:text-5xl font-semibold text-center mb-16 max-w-4xl mx-auto bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 dark:from-white dark:via-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-semibold text-center mb-16 max-w-4xl mx-auto bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 dark:from-white dark:via-gray-200 dark:to-gray-400 bg-clip-text text-transparent text-balance">
           Ответы на вопросы
         </h2>
 

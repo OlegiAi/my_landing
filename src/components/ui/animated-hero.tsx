@@ -28,8 +28,12 @@ function Hero() {
   return (
     <div id="hero" className="w-full relative h-screen flex items-center justify-center bg-black overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-950 to-black" />
-      <GradientSpheres />
-      <FloatingAILogos />
+      <div className="hidden md:block">
+        <GradientSpheres />
+      </div>
+      <div className="hidden md:block">
+        <FloatingAILogos />
+      </div>
       <div className="container mx-auto px-4">
         <div className="relative flex gap-8 items-center justify-center flex-col z-10">
           <div>
@@ -38,8 +42,8 @@ function Hero() {
             </Button>
           </div>
           <div className="flex gap-4 flex-col items-center w-full">
-            <h1 className="text-5xl md:text-7xl max-w-2xl mx-auto tracking-tighter text-center font-regular">
-              <span className="whitespace-nowrap font-semibold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 dark:from-white dark:via-gray-200 dark:to-gray-400 bg-clip-text text-transparent">Делегируй ИИ</span>
+            <h1 className="text-5xl md:text-7xl max-w-2xl mx-auto tracking-tighter text-center font-regular text-balance">
+              <span className="font-semibold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 dark:from-white dark:via-gray-200 dark:to-gray-400 bg-clip-text text-transparent">Делегируй ИИ</span>
               <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
                 &nbsp;
                 {titles.map((title, index) => (
@@ -66,14 +70,14 @@ function Hero() {
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl mx-auto text-center">
+            <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl mx-auto text-center text-pretty">
               Делай 80% работы с контент-маркетингом через нейросети и экономь 2-4 часа каждый день, создав команду из нужных тебе ИИ-сотрудников
             </p>
           </div>
           <div className="flex justify-center">
             <Button
               size="lg"
-              className="text-lg px-10"
+              className="text-base md:text-lg px-8 md:px-10"
               onClick={() => {
                 const element = document.querySelector('#program');
                 if (element) {

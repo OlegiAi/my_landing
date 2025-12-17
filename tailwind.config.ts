@@ -76,7 +76,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [addVariablesForColors],
+  plugins: [addVariablesForColors, addTextWrapUtilities],
 };
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
@@ -88,6 +88,18 @@ function addVariablesForColors({ addBase, theme }: any) {
 
   addBase({
     ":root": newVars,
+  });
+}
+
+// This plugin adds text-wrap utilities for better text balancing
+function addTextWrapUtilities({ addUtilities }: any) {
+  addUtilities({
+    '.text-balance': {
+      'text-wrap': 'balance',
+    },
+    '.text-pretty': {
+      'text-wrap': 'pretty',
+    },
   });
 }
 

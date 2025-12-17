@@ -123,7 +123,7 @@ export function ProgramSection() {
             <div className="flex items-start gap-4">
               <span className="text-lg font-semibold text-muted-foreground flex-shrink-0">6.</span>
               <div>
-                <h4 className="font-semibold mb-1">Картинки в GPT и Sora</h4>
+                <h4 className="font-semibold mb-1">Картинки в ChatGPT и NanoBanana</h4>
                 <p className="text-sm text-muted-foreground">
                   Промпты для генерации визуала под твой контент. От иллюстраций для постов до обложек курсов.
                 </p>
@@ -215,7 +215,7 @@ export function ProgramSection() {
     <div id="program" className="w-full relative bg-black overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-950 to-black" />
       <div className="container mx-auto px-4 py-20 lg:py-32 relative z-10">
-        <h2 className="text-4xl md:text-5xl font-semibold text-center mb-8 max-w-4xl mx-auto bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 dark:from-white dark:via-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-semibold text-center mb-8 max-w-4xl mx-auto bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 dark:from-white dark:via-gray-200 dark:to-gray-400 bg-clip-text text-transparent text-balance">
           ПРОГРАММА ПРАКТИКУМА
         </h2>
         <p className="text-xl text-center text-muted-foreground mb-16 max-w-2xl mx-auto">

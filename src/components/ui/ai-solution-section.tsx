@@ -9,7 +9,7 @@ export function AISolutionSection() {
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-950 to-black" />
 
-      <div className="container mx-auto px-4 py-12 relative z-10">
+      <div className="container mx-auto px-6 py-16 md:py-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 items-center max-w-7xl mx-auto">
           {/* Левая часть - Картинка */}
           <motion.div
@@ -43,7 +43,7 @@ export function AISolutionSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl md:text-6xl font-bold mb-8"
+              className="text-4xl md:text-6xl font-bold mb-8 text-balance"
             >
               <span className="text-white">Пусть </span>
               <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
@@ -58,7 +58,7 @@ export function AISolutionSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-xl md:text-2xl text-gray-400 leading-relaxed mb-12"
+              className="text-xl md:text-2xl text-gray-400 leading-relaxed mb-12 text-pretty"
             >
               Войди в число тех, кто делегирует ИИ задачи по контенту и маркетингу. Ускорь свою работу в 5 раз и сделай себе ИИ-сотрудников, которые возьмут на себя 80% работы.
             </motion.p>

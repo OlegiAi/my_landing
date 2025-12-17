@@ -48,7 +48,7 @@ export function ContentFactorySection() {
         </motion.div>
       ))}
 
-      <div className="container mx-auto px-4 py-12 relative z-10">
+      <div className="container mx-auto px-6 py-16 md:py-12 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Заголовок */}
           <motion.h2
@@ -56,9 +56,9 @@ export function ContentFactorySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl md:text-6xl font-bold mb-12"
+            className="text-4xl md:text-6xl font-bold mb-12 text-balance"
           >
-            <span className="text-white">Главный результат —<br /> </span>
+            <span className="text-white">Главный результат — </span>
             <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
               свои ИИ-сотрудники
             </span>
@@ -71,11 +71,11 @@ export function ContentFactorySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-neutral-900/50 backdrop-blur-sm border border-neutral-800/50 rounded-2xl p-6 hover:bg-neutral-900/60 hover:border-neutral-700/50 transition-all"
+              className="bg-white/[0.05] backdrop-blur-sm border border-white/[0.15] rounded-2xl p-6 hover:bg-white/[0.08] hover:border-white/[0.25] transition-all shadow-lg"
             >
               <div className="flex items-start gap-4">
                 <div className="flex-1">
-                  <p className="text-lg md:text-xl text-gray-300 leading-relaxed text-left mb-6">
+                  <p className="text-lg md:text-xl text-gray-300 leading-relaxed text-left mb-6 text-pretty">
                     Научишься их создавать и обучать под любую задачу с контент-маркетингом. И дальше останется только ставить задачи в чате и давать немного правок.
                   </p>
                   <p className="text-base text-gray-400 italic mb-4">
