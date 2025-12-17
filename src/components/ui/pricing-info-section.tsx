@@ -1,10 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import { Check, Loader2 } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { useState } from "react";
 
 export function PricingInfoSection() {
+  const [isLoading, setIsLoading] = useState(false);
+
   const includedItems = [
     "3 модуля практикума в Notion",
     "Бессрочный доступ к обучению",
@@ -12,6 +15,36 @@ export function PricingInfoSection() {
     "Доступ к обновлениям практикума",
     "Материалы сразу после оплаты",
   ];
+
+  const handlePayment = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/create-payment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          amount: "6900.00",
+          description: "Практикум по работе с нейросетями",
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.confirmationUrl) {
+        // Перенаправляем на страницу оплаты ЮKassa
+        window.location.href = data.confirmationUrl;
+      } else {
+        alert("Ошибка при создании платежа. Попробуйте еще раз.");
+        setIsLoading(false);
+      }
+    } catch (error) {
+      console.error("Payment error:", error);
+      alert("Произошла ошибка. Попробуйте еще раз.");
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div id="pricing-info" className="w-full bg-muted/30">
@@ -72,8 +105,17 @@ export function PricingInfoSection() {
               <Button
                 size="lg"
                 className="w-full text-lg"
+                onClick={handlePayment}
+                disabled={isLoading}
               >
-                Оплатить
+                {isLoading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Создание платежа...
+                  </>
+                ) : (
+                  "Оплатить"
+                )}
               </Button>
             </div>
           </div>
