@@ -41,7 +41,7 @@ export function PricingSection() {
               inactiveZone={0.01}
               borderWidth={2}
             />
-            <div className="relative bg-background rounded-lg p-8 shadow-lg shadow-gray-500/10 border border-border hover:shadow-xl hover:shadow-gray-400/10 transition-all duration-300 h-full">
+            <div className="relative bg-background rounded-lg p-4 sm:p-6 md:p-8 shadow-lg shadow-gray-500/10 border border-border hover:shadow-xl hover:shadow-gray-400/10 transition-all duration-300 h-full">
               <h3 className="text-2xl font-semibold mb-6 text-center">
                 Стандартный путь
               </h3>
@@ -74,7 +74,7 @@ export function PricingSection() {
               inactiveZone={0.01}
               borderWidth={2}
             />
-            <div className="relative bg-primary/5 rounded-lg p-8 shadow-lg shadow-gray-500/10 border-2 border-primary/20 hover:shadow-xl hover:shadow-gray-400/10 transition-all duration-300 h-full">
+            <div className="relative bg-primary/5 rounded-lg p-4 sm:p-6 md:p-8 shadow-lg shadow-gray-500/10 border-2 border-primary/20 hover:shadow-xl hover:shadow-gray-400/10 transition-all duration-300 h-full">
               <h3 className="text-2xl font-semibold mb-6 text-center">
                 С нейросетями
               </h3>

@@ -28,7 +28,7 @@ export function FAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-muted/30 rounded-lg p-8 border border-border hover:border-primary/20 transition-all duration-300"
+              className="bg-muted/30 rounded-lg p-4 sm:p-6 md:p-8 border border-border hover:border-primary/20 transition-all duration-300"
             >
               <div className="flex items-start gap-4">
                 <span className="text-3xl flex-shrink-0">❓</span>

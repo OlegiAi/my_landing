@@ -3,7 +3,7 @@ import { YooCheckout } from "@a2seven/yoo-checkout";
 import { v4 as uuidv4 } from "uuid";
 
 // Разрешенные суммы платежей (защита от мошенничества)
-const ALLOWED_AMOUNTS = ["6900.00", "1.00"]; // 1.00 для тестирования
+const ALLOWED_AMOUNTS = ["6900.00"];
 const MAX_DESCRIPTION_LENGTH = 200;
 
 export async function POST(request: Request) {

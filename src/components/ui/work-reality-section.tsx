@@ -7,7 +7,7 @@ export function WorkRealitySection() {
   return (
     <section id="work-reality" className="relative min-h-screen flex items-center justify-center bg-muted/30 overflow-hidden">
 
-      <div className="container mx-auto px-6 py-16 md:py-12 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 py-10 sm:py-16 md:py-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-center max-w-7xl mx-auto">
           {/* Левая часть - Текст */}
           <motion.div
@@ -83,7 +83,7 @@ export function WorkRealitySection() {
               alt="Злой персонаж"
               width={400}
               height={400}
-              className="w-full max-w-xs lg:max-w-sm object-contain"
+              className="w-full max-w-[280px] sm:max-w-xs md:max-w-sm lg:max-w-md object-contain"
               priority
             />
           </motion.div>

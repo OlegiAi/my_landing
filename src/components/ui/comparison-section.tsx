@@ -14,7 +14,7 @@ export function ComparisonSection() {
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* БЕЗ нейросетей */}
           <div className="relative">
-            <div className="bg-destructive/10 rounded-2xl p-8 border-2 border-destructive/30 relative overflow-hidden">
+            <div className="bg-destructive/10 rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-destructive/30 relative overflow-hidden">
               <div className="absolute top-4 right-4 bg-destructive text-destructive-foreground px-4 py-1 rounded-full text-sm font-semibold">
                 Старый способ
               </div>
@@ -43,7 +43,7 @@ export function ComparisonSection() {
 
           {/* С нейросетями */}
           <div className="relative">
-            <div className="bg-primary/10 rounded-2xl p-8 border-2 border-primary/30 relative overflow-hidden">
+            <div className="bg-primary/10 rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-primary/30 relative overflow-hidden">
               <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
                 Новый способ
               </div>

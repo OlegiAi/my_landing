@@ -48,7 +48,7 @@ export function ContentFactorySection() {
         </motion.div>
       ))}
 
-      <div className="container mx-auto px-6 py-16 md:py-12 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 py-10 sm:py-16 md:py-12 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Заголовок */}
           <motion.h2
@@ -85,7 +85,7 @@ export function ContentFactorySection() {
                     <img
                       src="/пример ии сотрудника.png"
                       alt="Пример ИИ-сотрудника в Claude Projects"
-                      className="w-full h-auto"
+                      className="w-full h-auto max-w-2xl sm:max-w-3xl lg:max-w-4xl mx-auto"
                     />
                   </div>
                 </div>

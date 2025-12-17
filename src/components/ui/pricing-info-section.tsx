@@ -3,11 +3,10 @@
 import { Button } from "@/components/ui/button";
 import { Check, Loader2 } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export function PricingInfoSection() {
   const [isLoading, setIsLoading] = useState(false);
-  const [isTestMode, setIsTestMode] = useState(false);
 
   const includedItems = [
     "3 модуля практикума в Notion",
@@ -17,20 +16,11 @@ export function PricingInfoSection() {
     "Материалы сразу после оплаты",
   ];
 
-  // Проверяем параметр ?test=true в URL
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    setIsTestMode(params.get("test") === "true");
-  }, []);
-
   const handlePayment = async () => {
     setIsLoading(true);
     try {
-      // В тестовом режиме платеж за 1₽, иначе за 6900₽
-      const amount = isTestMode ? "1.00" : "6900.00";
-      const description = isTestMode
-        ? "ТЕСТ - Практикум по работе с нейросетями"
-        : "Практикум по работе с нейросетями";
+      const amount = "6900.00";
+      const description = "Практикум по работе с нейросетями";
 
       const response = await fetch("/api/create-payment", {
         method: "POST",
@@ -82,7 +72,7 @@ export function PricingInfoSection() {
               inactiveZone={0.01}
               borderWidth={2}
             />
-            <div className="relative bg-background rounded-lg p-8 shadow-lg shadow-gray-500/10 border border-border hover:shadow-xl hover:shadow-gray-400/10 transition-all duration-300">
+            <div className="relative bg-background rounded-lg p-4 sm:p-6 md:p-8 shadow-lg shadow-gray-500/10 border border-border hover:shadow-xl hover:shadow-gray-400/10 transition-all duration-300">
               {/* Tariff Title */}
               <h3 className="text-2xl font-semibold text-center mb-6 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 dark:from-white dark:via-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
                 Единый тариф
@@ -127,17 +117,9 @@ export function PricingInfoSection() {
                     Создание платежа...
                   </>
                 ) : (
-                  <>
-                    {isTestMode && "🧪 ТЕСТ 1₽ - "}
-                    Оплатить
-                  </>
+                  "Оплатить"
                 )}
               </Button>
-              {isTestMode && (
-                <p className="text-center text-sm text-muted-foreground mt-2">
-                  🧪 Тестовый режим активирован - платеж 1₽
-                </p>
-              )}
             </div>
           </div>
         </div>

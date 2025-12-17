@@ -38,7 +38,7 @@ export function BeforeAfterSection() {
               inactiveZone={0.01}
               borderWidth={2}
             />
-            <div className="relative bg-muted/50 rounded-lg p-8 border border-border shadow-lg shadow-gray-500/10 hover:shadow-xl hover:shadow-gray-400/10 transition-all duration-300 flex flex-col w-full">
+            <div className="relative bg-muted/50 rounded-lg p-4 sm:p-6 md:p-8 border border-border shadow-lg shadow-gray-500/10 hover:shadow-xl hover:shadow-gray-400/10 transition-all duration-300 flex flex-col w-full">
               <h3 className="text-2xl font-semibold mb-6 text-muted-foreground">
                 ДО практикума:
               </h3>
@@ -63,7 +63,7 @@ export function BeforeAfterSection() {
               inactiveZone={0.01}
               borderWidth={2}
             />
-            <div className="relative bg-primary/5 rounded-lg p-8 border-2 border-primary/20 shadow-lg shadow-gray-500/10 hover:shadow-xl hover:shadow-gray-400/10 transition-all duration-300 flex flex-col w-full">
+            <div className="relative bg-primary/5 rounded-lg p-4 sm:p-6 md:p-8 border-2 border-primary/20 shadow-lg shadow-gray-500/10 hover:shadow-xl hover:shadow-gray-400/10 transition-all duration-300 flex flex-col w-full">
               <h3 className="text-2xl font-semibold mb-6">
                 ПОСЛЕ практикума:
               </h3>

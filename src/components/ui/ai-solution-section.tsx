@@ -9,7 +9,7 @@ export function AISolutionSection() {
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-950 to-black" />
 
-      <div className="container mx-auto px-6 py-16 md:py-12 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 py-10 sm:py-16 md:py-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 items-center max-w-7xl mx-auto">
           {/* Левая часть - Картинка */}
           <motion.div
@@ -24,7 +24,7 @@ export function AISolutionSection() {
               alt="Расслабленный персонаж"
               width={400}
               height={400}
-              className="w-full max-w-xs lg:max-w-sm object-contain"
+              className="w-full max-w-[280px] sm:max-w-xs md:max-w-sm lg:max-w-md object-contain"
               priority
             />
           </motion.div>

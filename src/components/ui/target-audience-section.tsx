@@ -60,7 +60,7 @@ export function TargetAudienceSection() {
                 inactiveZone={0.01}
                 borderWidth={2}
               />
-              <div className="relative bg-background rounded-lg p-8 shadow-md shadow-gray-500/5 border border-border hover:shadow-lg hover:shadow-gray-400/10 transition-all duration-300 hover:scale-[1.02]">
+              <div className="relative bg-background rounded-lg p-4 sm:p-6 md:p-8 shadow-md shadow-gray-500/5 border border-border hover:shadow-lg hover:shadow-gray-400/10 transition-all duration-300 hover:scale-[1.02]">
                 <h3 className="text-xl font-semibold mb-6">
                   {audience.title}
                 </h3>

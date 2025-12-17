@@ -34,7 +34,7 @@ export function LearningProcessSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-muted/30 overflow-hidden">
 
-      <div className="container mx-auto px-6 py-16 md:py-12 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 py-10 sm:py-16 md:py-12 relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Заголовок */}
           <motion.h2
@@ -71,7 +71,7 @@ export function LearningProcessSection() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white/[0.03] backdrop-blur-sm border border-white/[0.15] rounded-2xl p-8 hover:bg-white/[0.06] hover:border-white/[0.25] transition-all duration-300 cursor-pointer group hover:scale-[1.02] shadow-lg"
+                  className="bg-white/[0.03] backdrop-blur-sm border border-white/[0.15] rounded-2xl p-4 sm:p-6 md:p-8 hover:bg-white/[0.06] hover:border-white/[0.25] transition-all duration-300 cursor-pointer group hover:scale-[1.02] shadow-lg"
                 >
                   <div className="text-gray-400 group-hover:text-white transition-colors duration-300 mb-6">
                     {item.icon}
