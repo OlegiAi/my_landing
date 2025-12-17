@@ -2,9 +2,29 @@ import { NextResponse } from "next/server";
 import { YooCheckout } from "@a2seven/yoo-checkout";
 import { v4 as uuidv4 } from "uuid";
 
+// Разрешенные суммы платежей (защита от мошенничества)
+const ALLOWED_AMOUNTS = ["6900.00"];
+const MAX_DESCRIPTION_LENGTH = 200;
+
 export async function POST(request: Request) {
   try {
     const { amount, description } = await request.json();
+
+    // Валидация суммы
+    if (!amount || !ALLOWED_AMOUNTS.includes(amount.toString())) {
+      return NextResponse.json(
+        { error: "Invalid payment amount" },
+        { status: 400 }
+      );
+    }
+
+    // Валидация описания
+    if (description && description.length > MAX_DESCRIPTION_LENGTH) {
+      return NextResponse.json(
+        { error: "Description too long" },
+        { status: 400 }
+      );
+    }
 
     // Проверка переменных окружения
     if (!process.env.YOOKASSA_SHOP_ID || !process.env.YOOKASSA_SECRET_KEY) {
