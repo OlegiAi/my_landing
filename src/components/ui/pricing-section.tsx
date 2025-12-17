@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export function PricingSection() {
@@ -18,12 +17,6 @@ export function PricingSection() {
     { service: "15 сценариев Reels", time: "1 час 15 минут" },
     { service: "3 статьи", time: "1 час" },
     { service: "4 сценария для YouTube", time: "40 минут" },
-  ];
-
-  const includedItems = [
-    "Бессрочный доступ",
-    "Авторские фишки и инструкции",
-    "Доступ к обновлениям практикума",
   ];
 
   return (

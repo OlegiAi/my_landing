@@ -38,10 +38,10 @@ export async function POST(request: Request) {
       confirmationUrl: payment.confirmation?.confirmation_url,
       paymentId: payment.id,
     });
-  } catch (error: any) {
+  } catch (error) {
     console.error("Payment creation error:", error);
     return NextResponse.json(
-      { error: error.message || "Failed to create payment" },
+      { error: error instanceof Error ? error.message : "Failed to create payment" },
       { status: 500 }
     );
   }
